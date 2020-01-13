@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+<h1>{{product.title}}</h1><br>
+    description:
+        {{product.description}}<br>
+   price: {{product.price}}<br>
+summary:{{product.summary}}
+{% endblock %}
+</body>
+</html>

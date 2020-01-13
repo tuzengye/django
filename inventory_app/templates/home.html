@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+</head>
+<body>{% extends "base.html" %}
+{% block content %}
+
+
+<h1>Products
+
+    {% if user %}(<a href="{% url 'productapp:product_add' %}">add</a>){% endif %}
+</h1>
+{% for product in products %}
+
+<p><a href = '{% url "productapp:product_details" product.id%}'>{{ product }}</a></p>
+
+{% endfor %}
+{% endblock %}
+</body>
+</html>
+
+

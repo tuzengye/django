@@ -1,0 +1,64 @@
+<!--    {% if form.errors %}-->
+<!--        <p>Your username and password didn't match. Please try again.</p>-->
+<!--    {% endif %}-->
+
+<!--    {% if next %}-->
+<!--        {% if user.is_authenticated %}-->
+<!--        <p>Your account doesn't have access to this page. To proceed,-->
+<!--        please login with an account that has access.</p>-->
+<!--        {% else %}-->
+<!--&lt;!&ndash;        <p>Please login to see this page.</p>&ndash;&gt;-->
+<!--        {% endif %}-->
+<!--    {% endif %}-->
+
+<!--    <h2> Inventory App Login </h2>-->
+
+<!--    <form method="post" action="/">-->
+<!--        {% csrf_token %}-->
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <td>{{ form.username.label_tag }}</td>-->
+<!--                <td>{{ form.username }}</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>{{ form.password.label_tag }}</td>-->
+<!--                <td>{{ form.password }}</td>-->
+<!--            </tr>-->
+
+<!--        </table>-->
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+
+    <h2> Inventory Login </h2>
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+
+        </table>
+
+        <input type="submit" value="login" />
+
+
+    </form>
+
+<!--        <input type="submit" value="login" />-->
+<!--    </form>-->
